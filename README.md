@@ -1,1 +1,1 @@
-# springsecurity-example
+# Hands on with Spring Security :)
