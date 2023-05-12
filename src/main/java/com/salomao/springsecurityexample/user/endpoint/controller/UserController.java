@@ -25,8 +25,8 @@ public class UserController {
 
     @GetMapping("/{id}")
     @ApiOperation(value = "List users by id", response = User.class)
-    public User getUsers(@Param("id") UUID IDUser) {
-        return userService.getUserById(IDUser);
+    public User getUsers(@PathVariable Long id) {
+        return userService.getUserById(id);
     }
 
     @GetMapping

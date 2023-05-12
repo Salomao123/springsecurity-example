@@ -39,7 +39,7 @@ public class UserRepositoryTest {
     @Test
     public void testFindUserById() {
         when(userRepository.findById(any())).thenReturn(Optional.of(user1));
-        Optional<User> result = userRepository.findById(UUID.randomUUID());
+        Optional<User> result = userRepository.findById(1L);
         assertEquals(Optional.of(user1), result);
     }
 

@@ -31,14 +31,14 @@ public class UserServiceTest {
     public void testGetUserById() {
         User user = User.builder().login("salomao").email("salomao.batista@gmail.com").password("1234").build();
         when(userRepository.findById(any())).thenReturn(Optional.of(user));
-        User result = userService.getUserById(UUID.randomUUID());
+        User result = userService.getUserById(1L);
         assertEquals(user, result);
     }
 
     @Test
     public void testGetUserByIdNotFound() {
         when(userRepository.findById(any())).thenThrow(UserNotFoundException.class);
-        assertThrows(UserNotFoundException.class, () -> userService.getUserById(UUID.randomUUID()));
+        assertThrows(UserNotFoundException.class, () -> userService.getUserById(1L));
     }
 
 }

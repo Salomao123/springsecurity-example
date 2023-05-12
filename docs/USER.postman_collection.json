@@ -69,11 +69,27 @@
 		{
 			"name": "Create User",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjcmF6eXVzZXIxIiwiZXhwIjoxNjgzOTIwMjE3LCJpYXQiOjE2ODM5MDIyMTd9.Su-6KCRa_ktdYSa1ilyE0HF5zOATjMluNoLdor29oxeHqbERkIY0JeW1Nh1sg6Ck9InHaR9oLmqJafrzeV9Wig",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrYWJsZW1yIiwiZXhwIjoxNjgzOTE5MTMxLCJpYXQiOjE2ODM5MDExMzF9.zmkucnMQiPc3LMxlLFD1lyVpFfA7WZkq9lNOrdIX60NNf2X77taLFYbjeBcAHZPdIcVwSvrA8gAE3eEITLj_lQ",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"login\": \"kablemr\",\r\n    \"email\": \"kable@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+					"raw": "{\r\n    \"login\": \"crazyuser2\",\r\n    \"email\": \"crazyuser2@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -90,6 +106,14 @@
 						"save"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by id",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
