@@ -1,6 +1,6 @@
 
 server:
-  port: 8080
+  port: 8085
   servlet:
     context-path: /api
 
@@ -20,3 +20,6 @@ spring:
     url: jdbc:mysql://localhost:3306/USER?allowPublicKeyRetrieval=true&sslMode=DISABLED
     username: root
     password: root
+
+jwt:
+  secret: javainuse
