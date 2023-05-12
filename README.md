@@ -39,6 +39,8 @@ This is a great hands on at Spring Boot REST API that demonstrates how to implem
 10. after all, you can run the application with : `mvn spring-boot:run` or in your favorite IDE <3 and the api will be available at http://localhost:8085/api
 11. after running, you can access the swagger-ui at http://localhost:8085/api/swagger-ui/index.html#/user-controller
 
+
+
 ## API Endpoints
 
 The following API endpoints are available:
@@ -47,6 +49,12 @@ The following API endpoints are available:
 - `GET /users` - Get all users
 - `GET /users/{id}` - Get user by ID
 - `POST /users` - Create a new user
+
+<div style="background: linear-gradient(to right, #007bff, #00bfff); padding: 10px;border-radius:10px">
+    <p style="color: white; font-size: 18px;">
+        Fist of all, create the token in /authenticate endpoint and then use this token as Bearer Token Authorization 
+    </p>
+</div>
 
 
 ## Configuration
