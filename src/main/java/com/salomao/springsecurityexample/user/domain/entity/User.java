@@ -1,13 +1,9 @@
 package com.salomao.springsecurityexample.user.domain.entity;
 
-import javax.persistence.*;
-import java.util.UUID;
-
-import javax.persistence.Entity;
-import javax.validation.constraints.NotNull;
-
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Data
 @AllArgsConstructor
@@ -18,11 +14,11 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "usuario")
 public class User {
+
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private UUID id;
+    private Long id;
 
     @NotNull(message = "Field 'email' is mandatory")
     @Column(nullable = false, unique = true)

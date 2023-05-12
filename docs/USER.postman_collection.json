@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "cd5eb784-2670-4d52-beec-054d510396d3",
+		"name": "USER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "404566"
+	},
+	"item": [
+		{
+			"name": "Get User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjcmF6eXVzZXIxIiwiZXhwIjoxNjgzOTE5MzM4LCJpYXQiOjE2ODM5MDEzMzh9.ctXtYi194DPsW_JGk16wm5xXIzV0KLMpx_ZjLXyChy_JofMugB7Eu8fk06dBkdGz-KUZlJfmVdAwGQsbWzxmYg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrYWJsZW1yIiwiZXhwIjoxNjgzOTE5MTczLCJpYXQiOjE2ODM5MDExNzN9.5BfUVPlYZlDe_rGNirfUtJFBEwTCxlOF4NbM5oQON67XHqZwhk78u5cBQMc0XDTr2ihOo2ZtuIzCiYYiWd-xwg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{env_local_user_endpoint}}/users",
+					"host": [
+						"{{env_local_user_endpoint}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"crazyuser1\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env_local_user_endpoint}}/authenticate",
+					"host": [
+						"{{env_local_user_endpoint}}"
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"kablemr\",\r\n    \"email\": \"kable@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env_local_user_endpoint}}/users/save",
+					"host": [
+						"{{env_local_user_endpoint}}"
+					],
+					"path": [
+						"users",
+						"save"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
