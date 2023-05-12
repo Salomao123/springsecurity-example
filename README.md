@@ -1,6 +1,6 @@
-# Awesome Spring Boot REST API with Spring Security + JWT
+# Great Hands On Spring Boot REST API with Spring Security + JWT
 
-This is an awesome Spring Boot REST API that demonstrates how to implement Spring Security with JWT (JSON Web Token) authentication.
+This is a great hands on at Spring Boot REST API that demonstrates how to implement Spring Security with JWT (JSON Web Token) authentication.
 
 ## Features
 
