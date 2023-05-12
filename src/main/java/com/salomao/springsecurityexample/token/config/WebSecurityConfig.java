@@ -5,6 +5,7 @@ import com.salomao.springsecurityexample.token.http.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -50,9 +51,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable()
-                .authorizeRequests().antMatchers("/authenticate")
-                .permitAll().
-                        anyRequest().authenticated().and().
+                .authorizeRequests()
+                .antMatchers("/authenticate", "/**/swagger-ui.html").permitAll()
+                .antMatchers(HttpMethod.GET, "/**/swagger-ui/**").permitAll()
+                .antMatchers(HttpMethod.GET,  "/**/swagger-ui/index.html").permitAll()
+                .antMatchers(HttpMethod.GET,  "/**/swagger-ui/index.html/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/**/swagger-resources/**", "/**/webjars/springfox-swagger-ui/**", "/**/v2/api-docs/**").permitAll()
+                        .anyRequest().authenticated().and().
                         exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
