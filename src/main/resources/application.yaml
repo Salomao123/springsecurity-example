@@ -22,4 +22,4 @@ spring:
     password: root
 
 jwt:
-  secret: javainuse
+  secret: salomaotokensecret
